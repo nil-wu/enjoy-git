@@ -11,7 +11,7 @@ public class Example {
 
     @RequestMapping("/")
     String home() {
-        return "Hello Git! - V.01";
+        return "Hello Git! - V.05";
     }
 
     public static void main(String[] args) {
