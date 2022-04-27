@@ -1,5 +1,8 @@
 package cn.enjoy.Lock.readwrite;
 
+/**
+ * 商品实体类
+ */
 public class GoodsInfo {
 
     private final String name;

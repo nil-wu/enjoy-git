@@ -15,6 +15,9 @@ public class LogAspects {
     @Pointcut("execution(public int cn.enjoy.spring.aop.Calculator.div(int,int))")
     public void pointCut(){};
 
+    @Pointcut("execution(public int cn.enjoy.spring.aop.Calculator.*(..))")
+    public void pointCut2(){};
+
 
     @Before("pointCut()")
     public void logStart(){

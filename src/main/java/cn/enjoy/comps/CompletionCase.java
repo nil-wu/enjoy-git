@@ -14,7 +14,10 @@ public class CompletionCase {
     public void testByQueue() throws Exception{
         long start = System.currentTimeMillis();
         AtomicInteger count = new AtomicInteger(0);
+
+        //创建线程池
         ExecutorService pool = Executors.newFixedThreadPool(POOL_SIZE);
+        //容器存放提交给线程池的任务，list或者map都可以
         LinkedBlockingDeque<Future<Integer>> queue = new LinkedBlockingDeque<Future<Integer>>();
 
         //向里面扔任务

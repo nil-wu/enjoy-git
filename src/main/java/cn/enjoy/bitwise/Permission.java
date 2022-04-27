@@ -34,7 +34,7 @@ public class Permission {
         flag = flag | per;
     }
 
-    //删除用户的权限（1个或者多个）
+    //删除用户的权限（1个或者多个） per先取反，那么参数权限字段为0，其他全为1，任何跟0位与操作是0，自然该参数权限就是0
     public void disable(int per) {
         flag = flag & ~per;
     }

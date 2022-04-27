@@ -1,5 +1,8 @@
 package cn.enjoy.Lock.readwrite;
 
+/**
+ * 商品的服务接口
+ */
 public interface GoodsService {
 
     public GoodsInfo getNum();//获得商品的信息

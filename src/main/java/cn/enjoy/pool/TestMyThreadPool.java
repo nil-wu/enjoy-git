@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class TestMyThreadPool {
     public static void main(String[] args) throws InterruptedException {
-        MyThreadPool2 t = new MyThreadPool2(3, 0);
+        MyThreadPool2 t = new MyThreadPool2(3, 100);
 
         t.execute(new MyTask("testA"));
         t.execute(new MyTask("testB"));
@@ -32,7 +32,13 @@ public class TestMyThreadPool {
 
         @Override
         public void run() {
+            try{
+                Thread.sleep(r.nextInt(1000) + 2000);
 
+            }catch (Exception e){
+                System.out.println(Thread.currentThread().getId() + " sleep In terrrupt " + Thread.currentThread().isInterrupted());
+            }
+            System.out.println("任务 "  + name + " 完成 " );
         }
     }
 
