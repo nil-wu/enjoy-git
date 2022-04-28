@@ -40,6 +40,11 @@ public class JobInfo<R> {
         return taskProcesserCount.get();
     }
 
+    /*提供工作中失败的次数，课堂上没有加，只是为了方便调用者使用*/
+    public int getFailCount(){
+        return taskProcesserCount.get() - successCount.get();
+    }
+
     public List<TaskResult<R>> getTaskDetail(){
         List<TaskResult<R>> taskList = new LinkedList<>();
         TaskResult<R> taskResult;
@@ -58,4 +63,12 @@ public class JobInfo<R> {
         taskProcesserCount.incrementAndGet();
     }
 
+    public String getTotalProcess(){
+        return "Success[" + successCount.get() + "]/CurrentCount[" + taskProcesserCount.get() + "] Total["
+                + jobLength + "]";
+    }
+
+    public ITaskProcesser<?, ?> getTaskProcesser() {
+        return taskProcesser;
+    }
 }
