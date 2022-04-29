@@ -9,6 +9,7 @@ public class PendingJobPool {
     //保守估计
     private static final int THREAD_COUNTS = Runtime.getRuntime().availableProcessors();
 
+    //阻塞队列的饱和策略，缺省是抛出异常
     private static BlockingQueue<Runnable> taskQueue = new ArrayBlockingQueue<>(5000);
 
     //自定义线程池，固定大小，有界队列
