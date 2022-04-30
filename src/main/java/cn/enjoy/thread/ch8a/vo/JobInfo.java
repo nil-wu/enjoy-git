@@ -21,7 +21,7 @@ public class JobInfo<R> {
 
     private final ITaskProcesser<?, ?> taskProcesser;
 
-    public JobInfo(String jobName, int jobLength,  LinkedBlockingDeque<TaskResult<R>> taskDetailQueue, long expireTime, ITaskProcesser<?, ?> taskProcesser) {
+    public JobInfo(String jobName, int jobLength, long expireTime, ITaskProcesser<?, ?> taskProcesser) {
         super();
         this.jobName = jobName;
         this.jobLength = jobLength;
